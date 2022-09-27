@@ -9,8 +9,13 @@ namespace RazorAdmin.Pages
 		[BindProperty]
 		public IEnumerable<User> Users { get; set; }
 
+		public AccountsModel()
+		{
+			Users = Array.Empty<User>();
+		}
+
 		[BindProperty]
-		public string Message { get; set; }
+		public string? Message { get; set; }
 
 		public void OnGet(string message)
 		{

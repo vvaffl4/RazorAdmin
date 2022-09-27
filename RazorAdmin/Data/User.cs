@@ -1,10 +1,16 @@
 ﻿using RazorAdmin.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace RazorAdmin.Data
 {
 	public class User
 	{
+		[Required(ErrorMessage = "This field is required")]
+		[RegularExpression("^[a-zA-Z0-9_.-]*$", ErrorMessage = "Usernames can only contain letters, numbers and _")]
 		public string UserName { get; set; }
+		[Required(ErrorMessage = "This field is required")]
+		[MinLength(12, ErrorMessage = "Your password must be longer than 11 characters.")]
+		[MaxLength(128, ErrorMessage = "Your password can't be longer than 128 characters.")]
 		public string Password { get; set; }
 	}
 

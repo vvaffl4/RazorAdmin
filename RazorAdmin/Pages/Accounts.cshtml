@@ -3,13 +3,16 @@
 @{
 }
 
-<p>@Model.Message</p>
+@if (!string.IsNullOrEmpty(Model.Message))
+{
+	<p>@Model.Message</p>
+}
 <table>
 	<thead>
 		<tr>
 			<th>Username</th>
 			<th>Password</th>
-			<th rowspan="4">Actions</th>
+			<th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>
